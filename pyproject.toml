@@ -1,0 +1,33 @@
+[project]
+name = "contract-simplifier"
+version = "0.1.0"
+description = ""
+authors = [
+    {name = "consciouscode", email = "consciouscode.dev@gmail.com"}
+]
+readme = "README.md"
+requires-python = ">=3.12"
+
+dependencies = [
+    "langchain==0.3.26",
+    "langchain-openai==0.3.28",
+    "openai==1.97.1",
+    "fastapi>=0.111.0",
+    "uvicorn>=0.30.0",
+    "python-dotenv>=1.0.1"
+]
+
+[tool.poetry]
+packages = [{include = "contract_simplifier", from = "src"}]
+
+[build-system]
+requires = ["poetry-core>=2.0.0,<3.0.0"]
+build-backend = "poetry.core.masonry.api"
+
+[tool.poetry.group.dev.dependencies]
+pytest = "^8.0"
+ruff = "^0.4"
+
+[tool.poetry.scripts]
+start = "src.contract_simplifier.api.main:run"
+
